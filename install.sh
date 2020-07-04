@@ -4,7 +4,19 @@ set -e
 export INSTALL_K3S_SKIP_DOWNLOAD=true
 export K3S_KUBECONFIG_MODE=644
 export K3S_CLUSTER_SECRET=k3s
-export INSTALL_K3S_EXEC="server --docker --no-deploy=traefik --no-flannel --cluster-cidr=10.50.0.0/16 --kube-apiserver-arg=service-node-port-range=1-65500"
+#export INSTALL_K3S_EXEC="server --docker --no-deploy=traefik --no-flannel --cluster-cidr=10.50.0.0/16 --kube-apiserver-arg=service-node-port-range=1-65500"
+export INSTALL_K3S_EXEC="server \
+--docker \
+--no-deploy=traefik \
+--flannel-backend=none \
+--no-flannel \
+--kube-apiserver-arg=service-node-port-range=1-65500 \
+--cluster-cidr=10.42.0.0/16 \
+--kube-proxy-arg=proxy-mode=ipvs \
+--kube-proxy-arg=masquerade-all=true \
+--kube-proxy-arg=metrics-bind-address=0.0.0.0 \
+"
+
 
 # Usage:
 #   curl ... | ENV_VAR=... sh -
