@@ -42,7 +42,7 @@ vim install.sh
 export INSTALL_K3S_SKIP_DOWNLOAD=true
 export K3S_KUBECONFIG_MODE=644
 export K3S_CLUSTER_SECRET=k3s
-export INSTALL_K3S_EXEC="server --docker --no-deploy=traefik --no-flannel --kube-apiserver-arg=service-node-port-range=1-65500"
+export INSTALL_K3S_EXEC="server --docker --no-deploy=traefik --no-flannel --kube-apiserver-arg=service-node-port-range=10000-65500"
 ```
 ```
 ./install.sh
