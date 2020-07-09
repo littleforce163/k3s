@@ -44,10 +44,11 @@ export K3S_KUBECONFIG_MODE=644
 export K3S_CLUSTER_SECRET=k3s
 export INSTALL_K3S_EXEC="server --docker --no-deploy=traefik --no-flannel --kube-apiserver-arg=service-node-port-range=1-65500"
 ```
+```
 ./install.sh
 kubectl apply -f calico.yaml
 sudo cat /var/lib/rancher/k3s/server/node-token
-
+```
 ## agent install
 ```
 cp k3s /usr/local/bin/k3s
@@ -56,5 +57,6 @@ sudo mkdir -p /var/lib/rancher/k3s/agent/images/
 sudo cp k3s-airgap-images-amd64.tar /var/lib/rancher/k3s/agent/images/
 docker load -i k3s-airgap-images-amd64.tar
 ```
-
+```
 curl -sfL https://docs.rancher.cn/k3s/k3s-install.sh | INSTALL_K3S_SKIP_DOWNLOAD=true K3S_URL=${k3s_url} K3S_TOKEN=${k3s_token} INSTALL_K3S_EXEC="agent --docker" sh -
+```
