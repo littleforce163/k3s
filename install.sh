@@ -10,7 +10,7 @@ export INSTALL_K3S_EXEC="server \
 --no-deploy=traefik \
 --flannel-backend=none \
 --no-flannel \
---kube-apiserver-arg=service-node-port-range=1-65500 \
+--kube-apiserver-arg=service-node-port-range=10000-65500 \
 --cluster-cidr=10.42.0.0/16 \
 --kube-proxy-arg=proxy-mode=ipvs \
 --kube-proxy-arg=masquerade-all=true \
