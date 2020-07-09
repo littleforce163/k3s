@@ -28,15 +28,33 @@ net.ipv4.tcp_timestamps = 0
 net.ipv4.tcp_keepalive_time = 30
 ```
 
-## don't download
-INSTALL_K3S_SKIP_DOWNLOAD=true
-
-## chmod /etc/rancher/k3s/k3s.yaml
+## server install
+```
+cp k3s /usr/local/bin/k3s
+chmod +x /usr/local/bin/k3s
+sudo mkdir -p /var/lib/rancher/k3s/agent/images/
+sudo cp k3s-airgap-images-amd64.tar /var/lib/rancher/k3s/agent/images/
+docker load -i k3s-airgap-images-amd64.tar
+```
+vim install.sh
+```
+## at top add below env:
+export INSTALL_K3S_SKIP_DOWNLOAD=true
 export K3S_KUBECONFIG_MODE=644
-
-## secret token
 export K3S_CLUSTER_SECRET=k3s
-
-## server, docker, without traefik, no flannel, reset port range
 export INSTALL_K3S_EXEC="server --docker --no-deploy=traefik --no-flannel --kube-apiserver-arg=service-node-port-range=1-65500"
+```
+./install.sh
+kubectl apply -f calico.yaml
+sudo cat /var/lib/rancher/k3s/server/node-token
 
+## agent install
+```
+cp k3s /usr/local/bin/k3s
+chmod +x /usr/local/bin/k3s
+sudo mkdir -p /var/lib/rancher/k3s/agent/images/
+sudo cp k3s-airgap-images-amd64.tar /var/lib/rancher/k3s/agent/images/
+docker load -i k3s-airgap-images-amd64.tar
+```
+
+curl -sfL https://docs.rancher.cn/k3s/k3s-install.sh | INSTALL_K3S_SKIP_DOWNLOAD=true K3S_URL=${k3s_url} K3S_TOKEN=${k3s_token} INSTALL_K3S_EXEC="agent --docker" sh -
