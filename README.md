@@ -48,6 +48,7 @@ export INSTALL_K3S_EXEC="server --docker --no-deploy=traefik --no-flannel --kube
 ```
 2.3 install 
 ```
+chmod +x install.sh
 ./install.sh
 kubectl apply -f calico.yaml
 export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
@@ -71,5 +72,6 @@ k3s_token="K10be9b9e7dc3751dde146cb6f586682be66b21d5d8490816745b8ba1794b54bd72::
 ```
 3.3 install
 ```
+chmod +x k3s-install.sh
 ./k3s-install.sh
 ```
