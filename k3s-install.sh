@@ -1,6 +1,14 @@
 #!/bin/sh
 set -e
 
+k3s_url = ""
+k3s_token = ""
+
+export INSTALL_K3S_SKIP_DOWNLOAD=true 
+export K3S_URL=${k3s_url} 
+export K3S_TOKEN=${k3s_token} 
+export INSTALL_K3S_EXEC="agent --docker"
+
 # Usage:
 #   curl ... | ENV_VAR=... sh -
 #       or
