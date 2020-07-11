@@ -1,7 +1,7 @@
 # k3s
 
 ## 1. sysctl
-### 1.1 vim /etc/sysctl.conf
+1.1 vim /etc/sysctl.conf
 ```
 net.ipv4.ip_forward = 1
 net.bridge.bridge-nf-call-ip6tables = 1
