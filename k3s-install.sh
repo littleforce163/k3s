@@ -1,4 +1,5 @@
 #!/bin/sh
+# based on:  https://docs.rancher.cn/k3s/k3s-install.sh
 set -e
 
 ## set url
