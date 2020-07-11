@@ -47,6 +47,7 @@ export INSTALL_K3S_EXEC="server --docker --no-deploy=traefik --no-flannel --kube
 ```
 ./install.sh
 kubectl apply -f calico.yaml
+export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
 sudo cat /var/lib/rancher/k3s/server/node-token
 ```
 ## agent install
