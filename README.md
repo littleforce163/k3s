@@ -1,7 +1,7 @@
 # k3s
 
 ## sysctl
-vim /etc/sysctl.conf
+1. vim /etc/sysctl.conf
 ```
 net.ipv4.ip_forward = 1
 net.bridge.bridge-nf-call-ip6tables = 1
@@ -27,6 +27,7 @@ net.ipv4.tcp_wmem = 4096 655360 2621440
 net.ipv4.tcp_timestamps = 0
 net.ipv4.tcp_keepalive_time = 30
 ```
+2. sysctl -p
 
 ## server install
 ```
