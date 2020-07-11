@@ -1,8 +1,10 @@
 #!/bin/sh
 set -e
 
-k3s_url = ""
-k3s_token = ""
+## set url
+k3s_url="https://192.168.1.10:6443"
+## set token to server command: sudo cat /var/lib/rancher/k3s/server/node-token
+k3s_token="K10be9b9e7dc3751dde146cb6f586682be66b21d5d8490816745b8ba1794b54bd72::server:c5520f64db4aaa6c53fbbdd29fa2cb73"
 
 export INSTALL_K3S_SKIP_DOWNLOAD=true 
 export K3S_URL=${k3s_url} 
