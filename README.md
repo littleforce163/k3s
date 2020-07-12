@@ -62,6 +62,7 @@ chmod +x install.sh
 ./install.sh
 kubectl apply -f calico.yaml
 export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
+# note token that to be used when install agent
 sudo cat /var/lib/rancher/k3s/server/node-token
 ```
 ## 3. agent install
