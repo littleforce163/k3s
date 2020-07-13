@@ -86,3 +86,15 @@ k3s_token="K10be9b9e7dc3751dde146cb6f586682be66b21d5d8490816745b8ba1794b54bd72::
 chmod +x k3s-install.sh
 ./k3s-install.sh
 ```
+
+## 4. rancher
+```
+docker run -d \
+  -v /var/docker/rancher:/var/lib/rancher \
+  -p 5080:80 \
+  -p 5443:443 \
+  rancher/rancher:stable
+```
+```
+http://your_ip:5443
+```
