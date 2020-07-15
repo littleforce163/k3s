@@ -29,7 +29,7 @@ net.ipv4.tcp_keepalive_time = 30
 ```
 1.2 sysctl -p
 >
-1.3 ipvs
+1.3 install ipvs
 ```
 sudo apt-get install -y ipvsadm ipset
 ```
