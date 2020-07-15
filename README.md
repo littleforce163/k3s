@@ -32,6 +32,10 @@ net.ipv4.tcp_rmem = 4096 655360 2621440
 net.ipv4.tcp_wmem = 4096 655360 2621440
 net.ipv4.tcp_timestamps = 0
 net.ipv4.tcp_keepalive_time = 30
+
+net.ipv4.conf.all.arp_ignore = 1
+net.ipv4.conf.all.arp_announce = 0
+net.ipv4.conf.all.rp_filter = 0
 ```
 1.2 sysctl -p
 >
