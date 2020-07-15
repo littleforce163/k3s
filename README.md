@@ -1,4 +1,9 @@
 # k3s
+## 0. env
+```
+ubuntu 18.04
+k3s: v1.18.4
+```
 
 ## 1. prepare
 1.1 vim /etc/sysctl.conf
