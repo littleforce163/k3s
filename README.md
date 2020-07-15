@@ -28,6 +28,10 @@ net.ipv4.tcp_timestamps = 0
 net.ipv4.tcp_keepalive_time = 30
 ```
 1.2 sysctl -p
+1.3 ipvs
+```
+sudo apt-get install -y ipvsadm ipset
+```
 
 ## 2. server install
 2.1 preprare files
