@@ -1,6 +1,6 @@
 # k3s
 
-## 1. sysctl
+## 1. prepare
 1.1 vim /etc/sysctl.conf
 ```
 net.ipv4.ip_forward = 1
