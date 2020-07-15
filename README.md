@@ -1,7 +1,7 @@
 # k3s
 
 ## 1. sysctl
-1.1 vim /etc/sysctl.conf
+- 1.1 vim /etc/sysctl.conf
 ```
 net.ipv4.ip_forward = 1
 net.bridge.bridge-nf-call-ip6tables = 1
@@ -27,8 +27,9 @@ net.ipv4.tcp_wmem = 4096 655360 2621440
 net.ipv4.tcp_timestamps = 0
 net.ipv4.tcp_keepalive_time = 30
 ```
-1.2 sysctl -p
-1.3 ipvs
+- 1.2 sysctl -p
+
+- 1.3 ipvs
 ```
 sudo apt-get install -y ipvsadm ipset
 ```
